@@ -54,7 +54,7 @@ streamlit run app.py
 - `mock_data.py`: Simulated advisory environment.
 - `main.py`: CLI version of the simulation.
   
-## 🌐 Hosted Application
+## Hosted Application
 The application is live and accessible at:  
 **https://agentic-chaser-lnis6i8nhs3ggjcewa9nu2.streamlit.app/**
 
