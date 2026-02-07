@@ -1,97 +1,68 @@
-# Agentic Chaser
+# Advisory AI - Agentic Chaser
 
-Agentic Chaser prototype in Python designed to lessen the administrative burden on Financial Advisors.
+**Advisory AI** is an autonomous "Chaser" engine designed for financial and legal advisory firms. It automates the tedious process of operational follow-ups, ensuring that Pensions, Letters of Authority (LOA), and client document requests never fall through the cracks.
 
----
-## Case Management and Agentic Chaser Implementation Plan
+## Problem & Solution
 
-The objective is to build an Agentic Chaser that automates the admininstrative burden of chasing Letters of Authority (LOA) and client documents for Financial Advisors.
+### The Chosen Problem
+In financial advisory, consultants spend hours manually chasing providers (like Aviva or Royal London) and clients for signatures and documents. Delays in these operational steps slow down the entire advice process, leading to poor client outcomes and lost revenue.
 
-### Proposed Changes
-
-#### models.py
-
-- `Client`: Basic information and preferences.
-- `Provider`: Pension/Investment provider details.
-- `LOA`: Linked to Client and Provider, tracks current state (Sent, Signed, Received by Provider, Complete).
-- `DocumentRequest`: Specific documents needed from clientlike passport, payslip etc.
-- `Case`: Groups LOAs and Document Requests for a specific client goal, e.g. pension consolidation.
-
-#### engine.py 
-
-- `ChaserEnginer`: Evaluates the state of all active items.
-- Logic to determine "Chasing Rules" (e.g., if Provider LOA is > 10 days old, escalate).
-- Decisions on communication channels based on urgency and previous responses.
-
-#### mock_data.py
-
-- Generators for realistic client scenarios.
-- Time series simulation
-
-#### main.py
-
-- CLI or simple web dashboard (FastAPI/Streamlit) to interact with the system.
-- Logs showing the "Agent" in action sneding chasers.
-
-### Verification Plan
-
-#### Automated Tests
-
-- Unit tests for state transition logic.
-- Validation that the chaser triggers correctly at specific time intervals.
-
-### Manual Verification
-
-- Execute the simulation and observe the console output/dashboard to ensure that Agentic behavior feels authetic to the advisor's needs.
+### Our Solution: The Agentic Chaser
+Advisory AI acts as an autonomous operations assistant. It:
+1. **Monitors Wait Times**: Tracks exactly how long a provider or client has had a pending request.
+2. **Triggers Intelligent Chases**: Automatically sends follow-ups via the client's preferred channel (Email, WhatsApp, or SMS).
+3. **Escalates Issues**: If a provider doesn't respond within their average wait time, the agent "calls" (simulated) the provider. If it remains unresolved, it's flagged as **STUCK** for human intervention.
 
 ---
 
-
-## Key Features
-
-- **State Driven Logic**: The system tracks the exact status of every Letter of Authority (LOA) and Document Request.
--  **Agentic Decision Engine**: Automatically decides when to chase a client via their preferred channel like Email, Whatsapp, SMS etc, or when to flag a provider as stuck after excessive delays.
--  **Python 3.4 Compatibility**: Refactored to run on legacy environments while maintaining clean object oriented design.
+## Tech Stack
+- **Python 3.10+**: Core logic and engine.
+- **Streamlit**: Interactive dashboard for simulation and visualization.
+- **Pandas**: Data handling and reporting.
 
 ---
 
-## Components
+## Local Setup
 
-- **models.py**: Core entities(Client, Provider, Case, LOA).
-- **engine.py**: The intelligence layer that evaluates dates and triggers actions.
-- **mock_data.py**: Realistic advisor scenarios including pension consolidation and onboarding.
-- **main.py**: The dashboard simulation.
+### Prerequisites
+- Python installed on your machine.
+- `pip` (Python package manager).
 
----
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd anti
+   ```
+2. Install dependencies:
+   ```bash
+   pip install streamlit pandas
+   ```
 
-## Simulation Results
-
-The simulation successfully demostrated:
-
-### 1.) **Client Chasing**
-Daily checks and identify clients who haven't signed LOAs or provided documents.
-### 2.) **Provider Monitoring**
-Tracking response times against provider averages and escalating when items are overdue.
-### 3.) **Escalation**
-Markings items as "STUCK" when they fall outside normal processing windows.
-
+### Running the Project
+To launch the interactive dashboard:
 ```bash
-# To run the simulation:
-python main.py
+streamlit run app.py
 ```
-### Example Dashboard Output
 
-```bash
-CASE: Pension Consolidation (Client ID: c1)
-------------------------------
-  LOAs:
-    - Aviva           [Pending]    Chases: 5
-    - Royal London    [Pending]    Chases: 5
-  Document Requests:
-    - Passport        [Pending]     Chases: 3
+---
 
---- AGENT ACTIONS TODAY ---
- > CHASE CLIENT: Sent Email to John Doe regarding 'LOA for Aviva' (Chase #5)
- > CHASE PROVIDER: Called Royal London regarding John Doe's LOA (Wait time approx 30m)
-```
+## Project Structure
+- `app.py`: The Streamlit web interface.
+- `engine.py`: Core logic for the Agentic Chaser.
+- `models.py`: Data structures for Clients, Providers, and Cases.
+- `mock_data.py`: Simulated advisory environment.
+- `main.py`: CLI version of the simulation.
+
+---
+
+## Hosted Application
+The application is live and accessible at:  
+**[Link to your hosted app - e.g., Vercel/Streamlit Cloud]**
+
+
+---
+
+*Built for the Hackathon*
+
 
