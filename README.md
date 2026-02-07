@@ -54,12 +54,6 @@ streamlit run app.py
 - `mock_data.py`: Simulated advisory environment.
 - `main.py`: CLI version of the simulation.
 
----
-
-## Hosted Application
-The application is live and accessible at:  
-**[Link to your hosted app - e.g., Vercel/Streamlit Cloud]**
-
 
 ---
 
