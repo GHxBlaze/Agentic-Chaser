@@ -56,11 +56,11 @@ streamlit run app.py
   
 ## 🌐 Hosted Application
 The application is live and accessible at:  
-**[Link to your hosted app - e.g., Vercel/Streamlit Cloud]**
+**https://agentic-chaser-lnis6i8nhs3ggjcewa9nu2.streamlit.app/**
 
 
 ---
 
-*Built for the Hackathon*
+
 
 
