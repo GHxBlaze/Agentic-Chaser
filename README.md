@@ -44,7 +44,7 @@ The objective is to build an Agentic Chaser that automates the admininstrative b
 
 - Execute the simulation and observe the console output/dashboard to ensure that Agentic behavior feels authetic to the advisor's needs.
 
-#### Core Logic and models
+---
 
 
 ## Key Features
