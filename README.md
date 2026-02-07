@@ -53,6 +53,10 @@ streamlit run app.py
 - `models.py`: Data structures for Clients, Providers, and Cases.
 - `mock_data.py`: Simulated advisory environment.
 - `main.py`: CLI version of the simulation.
+  
+## 🌐 Hosted Application
+The application is live and accessible at:  
+**[Link to your hosted app - e.g., Vercel/Streamlit Cloud]**
 
 
 ---
